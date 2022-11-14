@@ -7,3 +7,4 @@
 ################################################################################
 
 from .MainClass import G2VSunbrick
+from .MainClass import G2VSunbrickArray

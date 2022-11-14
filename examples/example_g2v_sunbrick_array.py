@@ -31,9 +31,9 @@ import serial
 import time
 import json
 
-from g2v_sunbrick import G2VSunbrickArray
+from g2vsunbrick import G2VSunbrickArray
 
-SUNBRICK_COM_PORT = "COM8"	## Windows port name convention
+SUNBRICK_COM_PORT = "COM3"	## Windows port name convention
 # SUNBRICK_COM_PORT = "/dev/ttyACM0"	## Linux port name convention
 
 def example_initialize():

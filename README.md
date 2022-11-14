@@ -8,3 +8,8 @@ pip install git+https://git@github.com/g2v-optics/G2VSunbrick.git@main
 ## Examples
 Example scripts are available in the _examples_ directory.  
 Please note that the _examples_ directory will not be installed with the setup but can be downloaded through GitHub.
+
+
+## Required Information Before Starting
+
+The Python API requires that you know the serial COMM port
