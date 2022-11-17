@@ -78,9 +78,62 @@ The address used to communicate with a Sunbrick when in array. An address of 1 i
 - `int`: address of the Sunbrick
 ____
 ## METHODS
+### get_avg_temperature()
+#### RETURNS:
+- `float`: average temperature of all nodes
+_____
+### get_all_temperatures()
+#### RETURNS:
+- `list`: list containing the individual temperature of each node (first element is the average)
+____
 ### get_channel_value(channel, node=1)
 #### ARGS:
 - `channel`: The channel number in the range of [1, `channel_count`].
-- `node`: The node of the channel in the range of [`, 'node_count`]. Default value of 1.
+- `node`: The node of the channel in the range of [1, 'node_count`]. Default value of 1.
 #### RETURNS:
 - `float`: channel value in as a percentage.
+____
+### set_channel_value(channel, value, node=0)
+#### ARGS:
+- `channel`: The channel number in the range of [1, `channel_count`].
+- `value`: The percentage that the channel should be set to in the range of [0.0, 100.0]
+- `node`: The node of the channel in the range of [0, `node_count`] where 0 means all nodes. Default value is 0.
+#### RETURNS:
+- `True`: value has been set successfully
+- `False`: value was not set successfully
+- `None`: operation could not be completed
+____
+### get_intensity_factor(node=1)
+The intensity factor is a percentage value that is used to control all channels on a node or nodes. The resulting value on a Sunbrick channel is the channel value x intensity factor.
+#### ARGS:
+- `node`: The node of the channel in the range of [1, 'node_count`]. Default value of 1.
+#### RESULTS:
+- `float`: intensity factor in the range of [0.0, 100.0]
+____
+### set_intensity_factor(value, node=0)
+#### ARGS:
+- `value`: The percentage that the intensity factor should be set to in the range of [0.0, 100.0]
+- `node`: The node of the channel in the range of [0, `node_count`] where 0 means all nodes. Default value is 0.
+#### RESULTS:
+- `True`: intensity factor has been set successfully
+- `False`: intensity factor was not set successfully
+- `None`: operation could not be completed
+____
+### turn_off()
+Method to set all channels on all nodes to a value of 0.
+#### RESULTS:
+- `bool`: Always returns `True`
+____
+### get_spectrum(node=1)
+A spectrum is a set of values that have been applied to specific channels together.
+#### ARGS:
+- `node`: The node of the channel in the range of [1, 'node_count`]. Default value of 1.
+#### RESULTS:
+- `list`: Returns a list of `dict` items where each `dict` has a `Channel` and `Value` key.
+____
+### set_spectrum(spectrum_file)
+#### ARGS:
+- `spectrum_file`: a JSON file that contains a list of `dict` objects where each `dict` is of the form `{"Channel":<channel>, "Value":<value>}`
+#### RESULTS:
+- `bool`: Always returns `True`
+____
