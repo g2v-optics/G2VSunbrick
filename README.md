@@ -185,3 +185,39 @@ ____
 - `list`: returns a list of `G2VSunbrick` objects of each Sunbrick in the array
 ___
 ## Properties
+### turn_off()
+Turn off all the Sunbricks in the array by setting all channels to 0.
+### RESULTS:
+- None
+____
+### get_intensity_factor()
+Return the intensity factor of the Master Sunbrick which is taken to be the intensity factor of the entire Sunbrick array.
+#### RESULTS:
+- `float`: Intensity factor of the array in the range of [0.0, 100.0].
+____
+### set_intensity_factor(value)
+#### ARGS:
+- `value`: The value to set the intensity factor for all Sunbricks in the array in the range of [0.0, 100.0].
+#### RESULTS:
+- `bool`: `True` if all the Sunbricks in the array were set successfully
+- `bool`: `False` if one or more Sunbricks did not correctly set the intensity factor.
+____
+### get_spectrum()
+A spectrum is a set of values that have been applied to specific channels together. This will return the spectrum of the Master Sunbrick and it is assumed that each other Sunbrick in the array has the same channel value as the Master Sunbrick.
+#### RESULTS:
+- `list`: Returns a list of `dict` items where each `dict` has a `Channel` and `Value` key.
+____
+### set_spectrum(spectrum_file)
+#### ARGS:
+- `spectrum_file`: a JSON file that contains a list of `dict` objects where each `dict` is of the form `{"Channel":<channel>, "Value":<value>}`. This will set the spectrum for all Sunbricks in the array to the same channel settings.
+#### RESULTS:
+- `bool`: Always returns `True`
+____
+### get_avg_temperature()
+#### RESULTS:
+- 'float`: The average temperature of all the Sunbricks in the array. If there is an error in retrieving the temperature from any Sunbrick in the array, a `None` value will be returned instead of a `float`.
+____
+### get_brick_temperatures()
+#### RESULTS:
+- `dict`: Returns a `dict` of `float` values representing the average temperature of each Sunbrick in the array. The `brick_id` is used as the key to access the temperature value.
+____
