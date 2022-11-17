@@ -137,3 +137,45 @@ ____
 #### RESULTS:
 - `bool`: Always returns `True`
 ____
+## G2VSunbrick module
+
+### `G2VSunbrickArray(serial_obj, brick_ids=None)`
+A class used to represent an array of G2V Sunbrick
+##### ARGS:
+- `serial_obj`: The serial object that contains the port connected to the Master Sunbrick
+- `brick_ids`: list of `brick_ids` as strings to include in the network.  This list must be provided if there are more than 8 Sunbricks.
+____
+## PROPERTIES
+### master_id
+#### RETURNS:
+- `int`: the ID of the Master Sunbrick
+____
+### brick_count
+#### RETURNS:
+- `int`: the number of Sunbricks in the array
+____
+### brick_ids
+#### RETURNS:
+- `list`: list of the `brick_ids` in the array
+____
+### channel_count
+#### RETURNS:
+- `int`: number channels in the Master Sunbrick
+____
+### channel_list
+#### RETURNS:
+- `list`: list of channels in the Sunbrick
+____
+### node_count
+#### RETURNS:
+- `int`: number of nodes in the Sunbrick
+____
+### node_list
+#### RETURNS:
+- `list`: list of nodes in the Sunbrick
+____
+### bricks
+#### RETURNS:
+- `list`: returns a list of `G2VSunbrick` objects of each Sunbrick in the array
+___
+## Properties
