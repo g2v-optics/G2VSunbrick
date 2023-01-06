@@ -99,6 +99,9 @@ class G2VSunbrick(object):
         restrict_list.append("turn_off")
         restrict_list.append("get_spectrum")
         restrict_list.append("set_spectrum")
+        restrict_list.append("get_avg_temperature")
+        restrict_list.append("get_brick_temperatures")
+        restrict_list.append("get_all_temperatures")
 
         restrict_list.append("create_network")
 
@@ -752,14 +755,11 @@ class G2VSunbrick(object):
         with open(spectrum_file, 'r') as f:
             data = json.load(f)
 
-        # print("Type: {t}, Length = {l}".format(t=type(data), l=len(data)))
-
         for item in data:
             if 'Channel' in item and 'Value' in item:
                 self.set_channel_value(channel=int(item['Channel']), value=item['Value'])
             else:
                 raise ValueError('Spectrum file {sf} contains invalid key-value pair {d}'.format(sf=spectrum_file, d=item))
-
 
         return True
                 
@@ -887,9 +887,12 @@ class G2VSunbrickArray(object):
     @property
     def channel_list(self):
         '''Returns a list of available channels using the Master Sunbrick'''
-
         return self.__bricks[self.__master_id].channel_list
     
+    @property
+    def node_list(self):
+    '''Returns a list of available nodes using the Master Sunbrick'''
+        return self.__bricks[self.__master_id].node_list
 
     @property
     def master_id(self):

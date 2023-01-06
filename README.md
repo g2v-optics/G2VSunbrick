@@ -20,7 +20,7 @@ Please note that you can only have one connection to a Sunbrick at a time.
 
 ```
 import serial
-from g2v_sunbrick import G2VSunbrick
+from g2vsunbrick import G2VSunbrick
 
 # Create a serial object with the port name (in this case 'COM3')
 serial_obj = serial.Serial("COM3")

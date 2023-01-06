@@ -25,7 +25,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 import setuptools
 
-version = "0.1.1"
+version = "1.0.0"
 
 setuptools.setup(
     name="G2VSunbrick",
