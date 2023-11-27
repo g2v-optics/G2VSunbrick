@@ -891,7 +891,7 @@ class G2VSunbrickArray(object):
     
     @property
     def node_list(self):
-    '''Returns a list of available nodes using the Master Sunbrick'''
+        '''Returns a list of available nodes using the Master Sunbrick'''
         return self.__bricks[self.__master_id].node_list
 
     @property
