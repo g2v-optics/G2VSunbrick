@@ -18,7 +18,7 @@ This kit installs everything you need on a Windows laptop **without an internet 
 - A 64-bit Windows laptop or PC
 - Administrator rights on the computer (needed once, for the installation)
 - A USB connection to your Sunbrick
-- The calibration files for your Sunbrick (see Installation, step 5)
+- The spectrum presets for your Sunbrick, in their original `AM0` and `AM1.5G` folders (see Installation, step 5)
 
 You do not need to install Python or anything else beforehand. The kit includes it.
 
@@ -30,14 +30,15 @@ You do not need to install Python or anything else beforehand. The kit includes 
 4. **Connect your Sunbrick.** Plug it in over USB, then start **One-Click Sun** from the desktop.
 5. **Install your calibration (first launch only).**
    - The software tells you no calibration is installed and opens a file window.
-   - Browse to the calibration files for your Sunbrick. They are in the `AM0` and `AM1.5G` folders that came with your unit.
-   - Select any one `.spectrum` file, for example `AM1.5G\am1.5g-1.0.data.spectrum`.
-   - The software finds the rest of the files, asks you to confirm the folder, then sets everything up and starts.
+   - **Select one of your Sunbrick's spectrum presets.** These are the files ending in `.spectrum`, in the `AM1.5G` folder that came with your unit, for example `AM1.5G\am1.5g-1.0.data.spectrum`. Any one of them will do.
+   - **Do not select** a calibration or brick file such as `new_brick_calib` or `corrected_brick`. The software does not read those here, and it will report that it cannot find any spectrums.
+   - The software uses the file you picked to locate the whole set of presets, so **they must stay in the folders they shipped in**. The `AM0` and `AM1.5G` folders must sit together in the same parent folder. If you have moved or renamed them, restore them to their original arrangement first.
+   - The software then asks you to confirm the folder, sets everything up, and starts.
    - You only do this once. Later launches start straight away.
 
-> **Use the calibration files from your own Sunbrick.** The software cannot tell which unit a calibration belongs to. Files from a different Sunbrick will install without any warning but will produce the wrong light. Check the serial number on your Sunbrick's label against the folder you selected before you confirm.
+> **Use the presets from your own Sunbrick.** The software cannot tell which unit a set of presets belongs to. Presets from a different Sunbrick will install without any warning but will produce the wrong light. Check the serial number on your Sunbrick's label against the folder you selected before you confirm.
 
-**If the calibration files are rejected**, nothing is installed and the software lists what is wrong so you can choose again. Common causes are a missing `AM0` file, fewer than two `AM1.5G` files, two files for the same intensity, or files that belong to a different Sunbrick model.
+**If the presets are rejected**, nothing is installed and the software lists what is wrong. Common causes are a missing `AM0` preset, fewer than two `AM1.5G` presets, two files for the same intensity, a file that is not a spectrum preset, or presets that belong to a different Sunbrick model. If the window does not offer a second try, close and reopen One-Click Sun and select the file again.
 
 ## Usage
 
