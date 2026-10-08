@@ -1,6 +1,9 @@
 # G2VSunbrick
 Python API for interaction with the G2V Sunbrick
 
+## One-Click Sun (Windows installer)
+Looking for the Sunbrick One-Click Sun application? See the [customer guide](docs/One-Click-Sun-README.md) and download the offline kit from the [Releases page](https://github.com/g2v-optics/G2VSunbrick/releases/latest).
+
 ## Installation
 With GitHub credentials
 ```bash
